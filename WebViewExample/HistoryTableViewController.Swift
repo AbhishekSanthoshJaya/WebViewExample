@@ -2,8 +2,8 @@ import UIKit
 
 class HistoryTableViewController: UITableViewController {
 
-let historyArray: [String]
-
+let historyArray= [backForwardList]()
+   
 override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
 }
