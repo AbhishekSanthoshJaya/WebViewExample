@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadLambtonUrl()
+        let history = myWebKitView.backForwardList
+        
     }
     
     
@@ -34,7 +36,13 @@ class ViewController: UIViewController {
         
     }
     
-    
+     @IBAction func btnHistory(_ sender: Any)
+    {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let historyTVC = sb.instantiateViewController(identifier: "historyTVC") as! HistoryTableViewController
+        historyTVC.historyList = self.history
+        navigationController?.pushViewController(historyTVC, animated: true)
+    }
 
     @IBAction func btnNavigation(_ sender: UIBarButtonItem)
     {
