@@ -2,10 +2,10 @@ import UIKit
 
 class HistoryTableViewController: UITableViewController {
 
-let historyArray: [String] = []
+let historyArray: [String]
 
 override func numberOfSections(in tableView: UITableView) -> Int {
-    return 3
+    return historyArray.count
 }
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
