@@ -13,7 +13,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 }
    
  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell") as! BillTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "historytableVC") as! HistoryTableViewController
     let historyList = historyArray[indexPath.row]
     cell.textLabel?.text = historyList.title
     return cell  
