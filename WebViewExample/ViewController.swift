@@ -38,11 +38,21 @@ class ViewController: UIViewController {
     
      @IBAction func btnHistory(_ sender: Any)
     {
-        let history = myWebKitView.backForwardList.backList
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let historyTVC = sb.instantiateViewController(identifier: "historyTVC") as! HistoryTableViewController
-        historyTVC.historyList = self.history
-        navigationController?.pushViewController(historyTVC, animated: true)
+        if myWebKitView.canGoBack
+        {
+            let historyList =  myWebKitView.backForwardList.backList
+            if historyList.count > 0
+            {
+                for item in historyList {
+                    print("\(String(describing: item.title)) -  \(item.url.absoluteURL)")
+                }
+            }
+        }
+        //let history = myWebKitView.backForwardList.backList
+        //let sb = UIStoryboard(name: "Main", bundle: nil)
+        //let historyTVC = sb.instantiateViewController(identifier: "historyTVC") as! HistoryTableViewController
+        //historyTVC.historyList = self.history
+        //navigationController?.pushViewController(historyTVC, animated: true)
     }
 
     @IBAction func btnNavigation(_ sender: UIBarButtonItem)
